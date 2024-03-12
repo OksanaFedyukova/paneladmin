@@ -40,13 +40,19 @@
   <?php include "pages/home.php"; ?>
 
 
+  <?php
+
+$allowedPages = ["users", "rols"];
+
+if(isset($_GET["page"]) && in_array($_GET["page"], $allowedPages)) {
+    include "pages/".$_GET["page"].".php";
+}
+
+include "partials/footer.php";
+
+?>
 
 
-  <?php include "partials/footer.php"; ?>
-
-
-
-</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
