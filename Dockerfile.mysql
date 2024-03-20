@@ -1,0 +1,8 @@
+# Usa la imagen base oficial de MySQL
+FROM mysql:5.7
+
+# Copia el script SQL para inicializar la base de datos
+COPY init.sql /docker-entrypoint-initdb.d/init.sql
+
+# Expone el puerto 3306 para que MySQL sea accesible
+EXPOSE 3306

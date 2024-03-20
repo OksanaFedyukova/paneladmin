@@ -35,14 +35,12 @@
   <!-- Main Sidebar Container -->
   <?php include "partials/menu.php"; ?>
 
-  <!-- Content Wrapper. Contains page content -->
 
-  <?php include "pages/home.php"; ?>
 
 
   <?php
 
-$allowedPages = ["users", "rols"];
+$allowedPages = ["users", "roles", "home"];
 
 if(isset($_GET["page"]) && in_array($_GET["page"], $allowedPages)) {
     include "pages/".$_GET["page"].".php";
@@ -86,8 +84,8 @@ include "partials/footer.php";
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- <script src="dist/js/demo.js"></script>
+ --><!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 </body>
 </html>

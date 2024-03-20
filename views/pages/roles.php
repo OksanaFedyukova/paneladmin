@@ -1,7 +1,17 @@
 
 
 <div class="content-wrapper">
-    <h1 class="m-0">Users</h1>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Roles</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
@@ -33,10 +43,8 @@
                                     <tr>
 
                                         <th style="width:10px">#</th>
-                                        <th>Username</th>
-                                        <th>email</th>
-                                        <th>rol</th>
-                                        <th>foto</th>
+                                        <th>rolName</th>
+                                     
                                         <th>actions</th>
 
 
@@ -46,17 +54,14 @@
                                 </thead>
                                 <tbody>
     <?php
-    $users = UserController::showAllUsers();
+    $roles = RolController::showAllRols();
     
-    if (is_array($users)) {
-        foreach ($users as $key => $value) {
+   if (is_array($roles)){
+        foreach ($roles as $key => $value) {
     ?>
             <tr>
-                <td><?php echo $value["userId"] ?></td>
-                <td><?php echo $value["username"] ?></td>
-                <td><?php echo $value["email"] ?></td>
+                <td><?php echo $value["roleId"] ?></td>
                 <td><?php echo $value["rolName"] ?></td>
-                <td><img src="<?php echo $value["foto"] ?>" width="40" height="40"></td>
                 <td>
                     <div class='btn-group'>
                         <button class="btn btn-warning btn-sm ">
@@ -68,9 +73,9 @@
                     </div>
                 </td>
             </tr>
-    <?php
+            <?php
         }
-    } else {
+     } else {
         echo "<tr><td colspan='6'>No hay usuarios disponibles.</td></tr>";
     }
     ?>
