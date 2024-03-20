@@ -9,15 +9,15 @@ services:
       - "8080:80"  
     volumes:
       - ./paneladmin:/var/www/html  
+
   mysql:
     image: mysql:5.7
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: ""  
     ports:
-      - "3306:3306" 
+      - "3306:3306"
     volumes:
-      - /var/lib/mysql:/var/lib/mysql  
-
+      - 'C:/xampp/mysql/data/admin:/var/lib/mysql' 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links:
@@ -26,4 +26,4 @@ services:
       - "8081:80"  
     environment:
       PMA_HOST: mysql  
-      MYSQL_ALLOW_EMPTY_PASSWORD: ""  
+      MYSQL_ALLOW_EMPTY_PASSWORD: ""
