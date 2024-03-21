@@ -2,13 +2,14 @@
 
 class ConnectionModel {
     static public function connect() {
-        $host = "localhost";
-        $dbname = "admin";
-        $username = "root";
-        $password = "";
+        $host = getenv('DB_HOST');
+        $dbname = getenv('DB_DATABASE');
+        $username = getenv('DB_USERNAME');
+        $password = getenv('DB_PASSWORD');
 
         try {
             $link = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+            $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $link->exec("set names utf8mb4");
             return $link;
         } catch (PDOException $error) {
@@ -17,4 +18,5 @@ class ConnectionModel {
         }
     }
 }
+
 ?>

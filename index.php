@@ -1,4 +1,11 @@
 <?php
+$dotenvPath = __DIR__ . '/.env';
+if (file_exists($dotenvPath)) {
+    $dotenv = parse_ini_file($dotenvPath);
+    foreach ($dotenv as $key => $value) {
+        putenv("$key=$value");
+    }
+}
 
 include "controllers/TemplateController.php";
 include "controllers/UserController.php";

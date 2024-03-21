@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+
+/vendor/
+mysql.exe
+.env
+
+*.bak
+*.swp
+*.tmp
+*.log
+
+/cache/

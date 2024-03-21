@@ -1,7 +1,8 @@
-FROM php:7.4-apache
+FROM php:latest
 
-RUN a2enmod rewrite
-
+RUN apt-get update \
+    && apt-get install -y apache2 \
+    && a2enmod rewrite
 RUN docker-php-ext-install pdo pdo_mysql
 
 COPY . /var/www/html
