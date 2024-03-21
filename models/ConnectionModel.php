@@ -5,7 +5,7 @@ class ConnectionModel {
         $host = getenv('DB_HOST');
         $dbname = getenv('DB_DATABASE');
         $username = getenv('DB_USERNAME');
-        $password = getenv('DB_PASSWORD');
+        $password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : null;
 
         try {
             $link = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
