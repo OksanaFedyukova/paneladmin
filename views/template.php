@@ -37,7 +37,6 @@
 
 
 
-
   <?php
 
 $allowedPages = ["users", "roles", "home"];
@@ -51,8 +50,7 @@ include "partials/footer.php";
 ?>
 
 
-<!-- ./wrapper -->
-
+  
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
